@@ -1,14 +1,26 @@
 # Bank Application
 
+#babk class
 class Bank:
     def __init__(self, IFSC_Code, bankName, branchname, loc):
-        self.IFSC_Code = IFSC_Code
-        self.bankName = bankName
-        self.branchName = branchname
-        self.loc = loc
+        self._IFSC_Code = IFSC_Code
+        self._bankName = bankName
+        self._branchName = branchname
+        self._loc = loc
+
+    #getter method for bank code
+    @property
+    def code(self):
+        return '{}'.format(self._IFSC_Code)
+
+    #setter method
+    @code.setter
+    def code(self, bankCode):
+        self._IFSC_Code = bankCode
+
 
     def printBankInfo(self):
-        print("The Code : " + self.IFSC_Code + " Bank Name : "
+        print("The Code : " + self.code + " Bank Name : "
               + self.bankName + " Branch Name : " + self.branchName
               + " The Location: " + self.loc)
 
@@ -101,8 +113,13 @@ class Main:
         # lalith.printCustomer()
 
         acctID: str = input('Account ID : ')
-        money = input("Enter an amount: ")
-        depositAmount = int(money)
+        while True:
+            money = input("Enter an amount: ")
+            try:
+                depositAmount = int(money)
+                break;
+            except ValueError as a:
+                print(a)
         newAcc = Account(acctID, custID, code, bankName, branch, location)
         newAcc.deposit(depositAmount)
 
