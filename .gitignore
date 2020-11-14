@@ -2,3 +2,6 @@
 /shelf/
 /workspace.xml
 pythonProject*
+/OOPBankApp/__pycache__
+Simpl*
+.idea
