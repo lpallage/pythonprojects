@@ -1,6 +1,7 @@
 from OOPBankApp.Bank import Bank
 from OOPBankApp.Customer import Customer
 from OOPBankApp.Account import Account
+from OOPBankApp.SavigsAccount import SavingAccount
 
 
 class Main:
@@ -38,3 +39,8 @@ class Main:
         acc1.deposit(0,'none')
         acc1.withdraw(0)
         acc1.getBalance()
+
+        #bankCode, bankName, branchName, location, customer, accountID, SMinBalance
+
+        sav1 = SavingAccount("1","2","3","4",cust, "6",acc1.accountBalance,0)
+        sav1.deposit(0, 'true')

@@ -2,9 +2,9 @@
 
 from OOPBankApp.Account import Account
 
-class SavingAccount:
-    def __init__(self, bankCode, bankName, branchName, location, accountID, customer, amount,SMinBalance):
-        super(Account, self).__init__()
+class SavingAccount(Account):
+    def __init__(self, bankCode, bankName, branchName, location, customer, accountID, amount, SMinBalance):
+        super().__init__(bankCode, bankName, branchName, location, customer, accountID, amount)
         self._simBalance = SMinBalance
 
     @property
@@ -15,10 +15,19 @@ class SavingAccount:
     def sim(self, amount):
         self._simBalance = amount
 
-    def getSavingAccountInfo(self):
-        pass
-
     def deposit(self, money, message):
+        while True:
+            _simBalance = input('Enter amount to save: ')
+            try:
+                money = float(_simBalance)
+                self.accountBalance = self.accountBalance + money
+                break
+            except ValueError:
+                print('Please enter a dollar amount')
+        print('The balance is in the account : {}$'.format(self.accountBalance))
+
+
+    def getSavingAccountInfo(self, money, message):
         pass
 
     def withdraw(self, money):

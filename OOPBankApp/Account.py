@@ -36,10 +36,10 @@ class Account(Bank):
 
     def deposit(self, money, message):
         while True:
-            value = input("Enter an amount to deposit: ")
+            accountBalance = input("Enter an amount to deposit: ")
             try:
-                money = float(value)
-                self._amount = self._amount + money
+                money = float(accountBalance)
+                self.accountBalance = self.accountBalance + money
                 break
             except ValueError as e:
                 print('Invalid amount. Please re-enter the amount')
@@ -48,11 +48,15 @@ class Account(Bank):
 
     def withdraw(self, money):
         while True:
-            value = input('Enter an amount to withdraw:  ')
+            accountBalance = input('Enter an amount to withdraw:  ')
             try:
-                money = float(value)
-                self.accountBalance = self.accountBalance - money
-                break
+                money = float(accountBalance)
+                if money > self.accountBalance:
+                    print('You can not withdraw more than you have in the account')
+                    False
+                else:
+                    self.accountBalance = self.accountBalance - money
+                    break
             except ValueError as e:
                 print('Invalid amount. Please re-enter')
         print('The withdrawal account balance is :${}'.format(money))
