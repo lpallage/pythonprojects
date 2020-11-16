@@ -44,3 +44,4 @@ class Main:
 
         sav1 = SavingAccount("1","2","3","4",cust, "6",acc1.accountBalance,0)
         sav1.deposit(0, 'true')
+        sav1.withdraw(0)
