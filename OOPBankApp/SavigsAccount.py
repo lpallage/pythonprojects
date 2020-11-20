@@ -28,7 +28,8 @@ class SavingAccount(Account):
         print('The balance is in the account : {}$'.format(self.accountBalance))
 
     def getSavingAccountInfo(self):
-        pass
+        print('Saving Account Customer Information {} {}'
+              .format(self.customer, self.sim))
 
     def withdraw(self, money):
         while True:

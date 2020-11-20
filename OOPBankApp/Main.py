@@ -12,20 +12,21 @@ class Main:
         chase = Bank('None', 'None', 'None', 'None')
 
         print('=' * 50)
-        '''
-        while True:
-            bankcode = input('Please enter the bank code: ')
-            if bankcode.isalnum():
-                chase.code = bankcode
-                break
-            else:
-                print('Invalid bank code. Please re-enter code.')
+
+        def bankInfo(self):
+            while True:
+                bankcode = input('Please enter the bank code: ')
+                if bankcode.isalnum():
+                    self.chase.code = bankcode
+                    break
+                else:
+                    print('Invalid bank code. Please re-enter code.')
         bankname = input('Please enter the bank name: ')
         chase.name = bankname
         branchname = input('Please enter the branch name: ')
         chase.branch = branchname
         loc = input('Please enter the location: ')
-        chase.loc = loc'''
+        chase.loc = loc
 
         print('=' * 50)
         chase.printBankInfo()
@@ -39,9 +40,11 @@ class Main:
         acc1.deposit(0,'none')
         acc1.withdraw(0)
         acc1.getBalance()
+        acc1.getAccountInfo()
 
         #bankCode, bankName, branchName, location, customer, accountID, SMinBalance
 
         sav1 = SavingAccount("1","2","3","4",cust, "6",acc1.accountBalance,0)
         sav1.deposit(0, 'true')
         sav1.withdraw(0)
+        sav1.getSavingAccountInfo()

@@ -22,14 +22,14 @@ class Customer:
 
     @name.setter
     def name(self, custName):
-        self.__class__._customerName = custName
+        self._customerName = custName
 
     @property
     def address(self):
         return '{}'.format(self._customerAddress)
 
     @address.setter
-    def adress(self, custAddress):
+    def address(self, custAddress):
         self._customerAddress = custAddress
 
     @property
